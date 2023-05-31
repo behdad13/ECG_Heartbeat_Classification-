@@ -7,7 +7,7 @@ In this project, I perform Exploratory Data Analysis (EDA), feature engineering,
 
 Below is an explanation of the Python scripts used in this project:
 
-1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder.
+1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```
 
 2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling.
 
