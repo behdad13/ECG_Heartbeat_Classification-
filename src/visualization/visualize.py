@@ -32,11 +32,11 @@ class EcgSignalPlotter:
         self.train_data = train_data
         self.sample_size = sample_size
         self.label_dict = {
-            0: "Normal",
-            1: "Artial Premature",
+            0: "Normal beat",
+            1: "Supraventricular premature beat",
             2: "Premature ventricular contraction",
             3: "Fusion of ventricular and normal",
-            4: "Fusion of paced and normal"
+            4: "Unclassifiable beat"
         }
         self.fig, self.axs = plt.subplots(5 ,1, figsize=(13, 12))
 
