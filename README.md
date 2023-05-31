@@ -5,15 +5,17 @@ Welcome to the comprehensive A-Z project that uses a Convolutional Neural Networ
 
 In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find these notebooks in the **Notebooks** Directory.
 
-Below is an explanation of the Python scripts used in this project:
+Below is an explanation of the Python scripts used in this project: Follow the steps to run the projects. 
 
-1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
+1. First, install required libraries by runing the command ```pip install -r requirements.txt``` and create directories for data and it sub folders (put the raw data in the raw folder). Becease of the large size I can not upload **data** folder here. (sorry :(( )
 
-2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```. It is ```python src/features/build_features.py <path to your intermediate data> <path to your processed data>```.
+2. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
 
-3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```. It is ```python src/models/train_model.py <path to your processed train data> <path to your model directory>```.
+3. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```. It is ```python src/features/build_features.py <path to your intermediate data> <path to your processed data>```.
 
-4. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
+4. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```. It is ```python src/models/train_model.py <path to your processed train data> <path to your model directory>```.
+
+5. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
 
 * For testing testset, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_test.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ test```.
 
@@ -21,7 +23,7 @@ Below is an explanation of the Python scripts used in this project:
 * it is ```python -m src.models.predict_model <path to your processed test/holdout data>  <path to your best model>  <path to your figure folder>  <name:test or holdout> ```.
 
 
-5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
+6. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
 Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```. It is ```python src/visualization/visualize.py <path to your processed train data> <path to your intermediate train data> <path to your figure folder>```.
 
 
