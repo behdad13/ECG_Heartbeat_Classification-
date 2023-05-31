@@ -11,12 +11,16 @@ Below is an explanation of the Python scripts used in this project:
 
 2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```.
 
-3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```
+3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```
 
 4. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
 
-5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
+For testing testset, run the command in your IDE terminal: ```python src/models/predict_model.py data/processed/processed_test.csv models/best_model_filter_64_kernel_7_pool_2.h5 test```.
 
+For testing holdout, run the command in your IDE terminal: ```python src/models/predict_model.py data/processed/processed_holdout.csv models/best_model_filter_64_kernel_7_pool_2.h5 holdout```.
+
+5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
+Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```.
 
 
 A dedicated folder named deployment is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
