@@ -34,6 +34,9 @@ A dedicated folder named **deployment** is included in this project. It holds th
 To deploy the model, run the command in your IDE terminal ```python deployment/app.py```. You can test the model with ```output.csv```, located in ```deployment->update``` directory.
 
 
+To perform MLFlow analysis, you can run the following command in your IDE terminal: mlflow ui. This command will launch the MLFlow user interface, allowing you to access graphical analysis tools.
+
+![Screenshot 2023-05-30 at 6 54 10 PM](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/52537d3c-82b1-4c0c-8594-ebe236f51d13)
 
 
 Project Organization
