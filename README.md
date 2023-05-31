@@ -1,20 +1,26 @@
 Sickkids_Interview
 ==============================
 
-An A-Z project for classification of heartbeats using a Deep Learning model (CNN)
+Welcome to the comprehensive A-Z project that uses a Convolutional Neural Network (CNN) model for heartbeat classification.
+
+In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find these notebooks in the Notebooks Directory.
+
+Below is an explanation of the Python scripts used in this project:
+
+1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder.
+
+2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling.
+
+3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance.
+
+4. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
+
+5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
 
 
-All explanations for EDA, feature engineering, data modelling, model evaluation, model deployements are described clearly with code in a jupyter notebook (**Notebooks Directory**)
 
-explanation of .py files:
-1. make_dataset.py: it converts data from raw format and transfers to the interim folder.
-2. build_features.py: it converts data from intermediate to processed and ready-to-use format.
-3. train_model.py: It trains and validate the model. It also includes hyperparameter tuning.
-4. predict_model.py: It predicts the result and tests the model with test and hold-out set.
-5. visualize.py: It visualizes graphs, charts, and confusion matrix.
-
-I added a folder, called deployement. it includes flask application of the project. It gets .csv file, containing a record of ECG signals and gives you the ECG class type
-
+A dedicated folder named deployment is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
+![image](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/8531b35a-8630-46f4-94f1-37903ce26595)
 
 
 
