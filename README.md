@@ -3,7 +3,7 @@ Sickkids_Interview
 
 Welcome to the comprehensive A-Z project that uses a Convolutional Neural Network (CNN) model for heartbeat classification.
 
-In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find these notebooks in the **Notebooks** Directory.
+In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find answers of your questions in the **Notebooks** Directory.
 
 Below is an explanation of the Python scripts used in this project: Follow the steps to run the projects. 
 
