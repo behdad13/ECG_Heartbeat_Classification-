@@ -1,7 +1,24 @@
 Sickkids_Interview
 ==============================
 
-An A-Z project for classification of heartbeat using a Deep Learning model
+An A-Z project for classification of heartbeats using a Deep Learning model (CNN)
+
+
+All explanations for EDA, feature engineering, data modelling, model evaluation, model deployements are described clearly with code in a jupyter notebook (**Notebooks Directory**)
+
+explanation of .py files:
+1. make_dataset.py: it converts data from raw format and transfers to the interim folder.
+2. build_features.py: it converts data from intermediate to processed and ready-to-use format.
+3. train_model.py: It trains and validate the model. It also includes hyperparameter tuning.
+4. predict_model.py: It predicts the result and tests the model with test and hold-out set.
+5. visualize.py: It visualizes graphs, charts, and confusion matrix.
+
+I added a folder, called deployement. it includes flask application of the project. It gets .csv file, containing a record of ECG signals and gives you the ECG class type
+
+
+
+
+
 
 Project Organization
 ------------
@@ -17,7 +34,10 @@ Project Organization
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │
+    ├── Deployement        <- deployement of the model on the local host (Flask app)  
+    │
+    ├── models             <- Trained and serialized models, model predictions, or model summaries.
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
