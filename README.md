@@ -20,7 +20,10 @@ Below is an explanation of the Python scripts used in this project:
 
 
 A dedicated folder named deployment is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
+
 ![image](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/8531b35a-8630-46f4-94f1-37903ce26595)
+
+To deploy the model, run the command in your IDE terminal ```python deployment/app.py```
 
 
 
