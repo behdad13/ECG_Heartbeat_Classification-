@@ -15,10 +15,11 @@ Below is an explanation of the Python scripts used in this project:
 
 4. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
 
-For testing testset, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_test.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ test```.
+* For testing testset, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_test.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ test```.
 
-For testing holdout, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_holdout.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ holdout```.
-it is ```python -m src.models.predict_model <path to your processed test/holdout data>  <path to your best model>  <path to your figure folder>  <name:test or holdout> ```.
+* For testing holdout, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_holdout.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ holdout```.
+* it is ```python -m src.models.predict_model <path to your processed test/holdout data>  <path to your best model>  <path to your figure folder>  <name:test or holdout> ```.
+
 
 5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
 Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```. It is ```python src/visualization/visualize.py <path to your processed train data> <path to your intermediate train data> <path to your figure folder>```.
