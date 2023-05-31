@@ -7,7 +7,7 @@ In this project, I perform Exploratory Data Analysis (EDA), feature engineering,
 
 Below is an explanation of the Python scripts used in this project: Follow the steps to run the projects. 
 
-1. First, install required libraries by runing the command ```pip install -r requirements.txt``` and create directories for data and it sub folders (put the raw data in the raw folder). Becease of the large size I can not upload **data** folder here. (sorry :(( )
+1. First, install required libraries by runing the command ```pip install -r requirements.txt``` and create directories for **data** and its sub folders (put the raw data ```mitbih_test.csv``` &  ```mitbih_train.csv``` in the **raw** folder). Becease of the large data size I can not upload **data** folder here. (sorry :(( )
 
 2. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
 
