@@ -1,0 +1,6 @@
+artifact_location: file:///Users/behdad/sickkids_interview/ECG%20Heartbeat%20Categorization/src/models/mlruns/731481008287982372
+creation_time: 1685483245076
+experiment_id: '731481008287982372'
+last_update_time: 1685483245076
+lifecycle_stage: active
+name: Hyperparameter_Tuning

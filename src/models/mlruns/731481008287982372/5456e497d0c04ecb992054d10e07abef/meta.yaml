@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/behdad/sickkids_interview/ECG%20Heartbeat%20Categorization/src/models/mlruns/731481008287982372/5456e497d0c04ecb992054d10e07abef/artifacts
+end_time: 1685484073763
+entry_point_name: ''
+experiment_id: '731481008287982372'
+lifecycle_stage: active
+run_id: 5456e497d0c04ecb992054d10e07abef
+run_name: calm-turtle-244
+run_uuid: 5456e497d0c04ecb992054d10e07abef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685483797889
+status: 3
+tags: []
+user_id: behdad
