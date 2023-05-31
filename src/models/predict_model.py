@@ -14,7 +14,6 @@ def prepare_test_data(df_test):
     # Reshape to be [samples][time steps][features]
     X_test = X_test.values.reshape(X_test.shape[0], X_test.shape[1], 1)
 
-    # Convert labels to categorical one-hot encoding
     y_test_one = utils.to_categorical(y_test, num_classes=5)
 
     return X_test, y_test, y_test_one

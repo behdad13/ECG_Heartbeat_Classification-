@@ -88,21 +88,15 @@ def main():
     best_accuracy = 0.0
     best_model_path = ""
 
-    # Loop over hyperparameter values
     for filter_size in filter_sizes:
         for kernel_size in kernel_sizes:
-            # Start MLflow run
             with mlflow.start_run():
-                # Prepare data
                 X_train, X_validation, y_train, y_validation = prepare_train_valid_data(df_train)
 
-                # Create the model
                 model = create_model(filter_size, kernel_size, pool_size)
 
-                # Train the model
                 model = train_model(model, X_train, y_train, X_validation, y_validation)
 
-                # Evaluate the model
                 loss, accuracy = evaluate_model(model, X_validation, y_validation)
 
                 # Save the model if it has the highest accuracy so far
@@ -110,7 +104,6 @@ def main():
                     best_accuracy = accuracy
                     best_model_path = save_best_model(model, filter_size, kernel_size, pool_size)
 
-                # Log hyperparameters and metrics to MLflow
                 log_metrics(filter_size, kernel_size, pool_size, accuracy, loss)
 
     # Print the path to the best model
