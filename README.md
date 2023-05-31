@@ -7,20 +7,21 @@ In this project, I perform Exploratory Data Analysis (EDA), feature engineering,
 
 Below is an explanation of the Python scripts used in this project:
 
-1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```.
+1. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
 
-2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```.
+2. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```. It is ```python src/features/build_features.py <path to your intermediate data> <path to your processed data>```.
 
-3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```
+3. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```. It is ```python src/models/train_model.py <path to your processed train data> <path to your model directory>```.
 
 4. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
 
 For testing testset, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_test.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ test```.
 
 For testing holdout, run the command in your IDE terminal: ```python -m src.models.predict_model data/processed/processed_holdout.csv models/best_model_filter_64_kernel_7_pool_2.h5 reports/figures/ holdout```.
+it is ```python -m src.models.predict_model <path to your processed test/holdout data>  <path to your best model>  <path to your figure folder>  <name:test or holdout> ```.
 
 5. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
-Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```.
+Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```. It is ```python src/visualization/visualize.py <path to your processed train data> <path to your intermediate train data> <path to your figure folder>```.
 
 
 
