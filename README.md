@@ -9,11 +9,14 @@ Below is an explanation of the Python scripts used in this project: Follow the s
 
 1. First, install required libraries by runing the command ```pip install -r requirements.txt``` and create directories for **data** and its sub folders (put the raw data ```mitbih_test.csv``` &  ```mitbih_train.csv``` in the **raw** folder). Becease of the large data size I can not upload **data** folder here. (sorry :(( )
 
-2. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
+2. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. 
+* It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
 
-3. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```. It is ```python src/features/build_features.py <path to your intermediate data> <path to your processed data>```.
+3. ```build_features.py```: This script takes the data from the interim stage and processes it into a format ready for modelling. Run the command in your IDE terminal ```python src/features/build_features.py data/interim data/processed```.
+* It is ```python src/features/build_features.py <path to your intermediate data> <path to your processed data>```.
 
-4. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```. It is ```python src/models/train_model.py <path to your processed train data> <path to your model directory>```.
+4. ```train_model.py```: This script is responsible for training and validating the model. It includes hyperparameter tuning for optimal performance. Run the command in your IDE terminal ```python src/models/train_model.py data/processed/processed_train.csv models/```. 
+* It is ```python src/models/train_model.py <path to your processed train data> <path to your model directory>```.
 
 5. ```predict_model.py```: This script predicts outcomes and tests the model against the test and hold-out set.
 
@@ -24,7 +27,8 @@ Below is an explanation of the Python scripts used in this project: Follow the s
 
 
 6. ```visualize.py```: This script produces various visualizations such as graphs, charts, and confusion matrices to better understand the model's performance.
-Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```. It is ```python src/visualization/visualize.py <path to your processed train data> <path to your intermediate train data> <path to your figure folder>```.
+Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```.
+* It is ```python src/visualization/visualize.py <path to your processed train data> <path to your intermediate train data> <path to your figure folder>```.
 
 
 
