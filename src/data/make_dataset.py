@@ -53,6 +53,3 @@ if __name__ == '__main__':
     load_dotenv(find_dotenv())
 
     main()
-
-
-# python src/data/make_dataset.py data/raw data/interim

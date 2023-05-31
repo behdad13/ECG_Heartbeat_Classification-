@@ -1,15 +1,14 @@
 import pandas as pd
 from sklearn.utils import resample
-import os
+import click
+import logging
 
-
-os.environ['DIR_PATH'] = '/Users/behdad/sickkids_interview/ECG Heartbeat Categorization'
-dir_path = os.getenv('DIR_PATH')
-input_filepath = os.path.join(dir_path, 'data', 'interim')
-output_filepath = os.path.join(dir_path, 'data', 'processed')
-
-
-def processing(input_filepath, output_filepath):
+@click.command()
+@click.argument('input_filepath', type=click.Path(exists=True))
+@click.argument('output_filepath', type=click.Path())
+def main(input_filepath, output_filepath):
+    logger = logging.getLogger(__name__)
+    logger.info('making final data set from raw data')
 
     # Read the input CSV files
     df_train = pd.read_csv(input_filepath + '/inter_train.csv', header=None)
@@ -37,7 +36,12 @@ def processing(input_filepath, output_filepath):
     df_hold_out.to_csv(output_filepath + '/processed_holdout.csv', index=False)
     df_test.to_csv(output_filepath + '/processed_test.csv', index=False)
 
+    logger.info('Data processing complete.')
 
-processing(input_filepath, output_filepath)
 
-#python src/features/build_features.py
+if __name__ == '__main__':
+    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    logging.basicConfig(level=logging.INFO, format=log_fmt)
+    main()
+
+

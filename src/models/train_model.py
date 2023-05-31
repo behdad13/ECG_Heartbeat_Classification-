@@ -1,4 +1,5 @@
 import mlflow
+import click
 from keras.models import Sequential, save_model
 from keras.layers import Conv1D, Dense, Dropout, Flatten, MaxPooling1D
 from keras.callbacks import EarlyStopping
@@ -63,10 +64,8 @@ def evaluate_model(model, X_validation, y_validation):
     return loss, accuracy
 
 
-def save_best_model(model, filter_size, kernel_size, pool_size):
-    model_dir = os.path.join(dir_path, "models")
-    os.makedirs(model_dir, exist_ok=True)
-    model_path = os.path.join(model_dir, f"best_model_filter_{filter_size}_kernel_{kernel_size}_pool_{pool_size}.h5")
+def save_best_model(model, model_path, filter_size, kernel_size, pool_size):
+    model_path = os.path.join(model_path, f"best_model_filter_{filter_size}_kernel_{kernel_size}_pool_{pool_size}.h5")
     save_model(model, model_path)
     return model_path
 
@@ -75,7 +74,11 @@ def log_metrics(filter_size, kernel_size, pool_size, accuracy, loss):
     mlflow.log_params({"filter_size": filter_size, "kernel_size": kernel_size, "pool_size": pool_size})
     mlflow.log_metrics({"accuracy": accuracy, "loss": loss})
 
-def main():
+
+@click.command()
+@click.argument('df_train_path', type=click.Path(exists=True))
+@click.argument('model_path', type=click.Path())
+def main(df_train_path, model_path):
     # Define the hyperparameter values
     filter_sizes = [64, 128]
     kernel_sizes = [3, 5, 7]
@@ -87,6 +90,9 @@ def main():
     # Initialize variables to track the best model
     best_accuracy = 0.0
     best_model_path = ""
+
+    # Load the df_train from the provided path
+    df_train = pd.read_csv(df_train_path)
 
     for filter_size in filter_sizes:
         for kernel_size in kernel_sizes:
@@ -102,13 +108,12 @@ def main():
                 # Save the model if it has the highest accuracy so far
                 if accuracy > best_accuracy:
                     best_accuracy = accuracy
-                    best_model_path = save_best_model(model, filter_size, kernel_size, pool_size)
+                    best_model_path = save_best_model(model, model_path, filter_size, kernel_size, pool_size)
 
                 log_metrics(filter_size, kernel_size, pool_size, accuracy, loss)
 
     # Print the path to the best model
     print("Best model saved at:", best_model_path)
-
 
     # Fetch the best run based on the highest accuracy
     best_run = mlflow.search_runs(order_by=['metrics.accuracy DESC']).iloc[0]
@@ -125,11 +130,5 @@ def main():
     print("pool_size:", best_pool_size)
     print("Best Accuracy:", round(best_accuracy, 4))
 
-# Execute the main function
-os.environ['DIR_PATH'] = '/Users/behdad/sickkids_interview/ECG Heartbeat Categorization'
-dir_path = os.getenv('DIR_PATH')
-df_train = pd.read_csv(os.path.join(dir_path, 'data/processed/processed_train.csv'))
-main()
-
-
-# python src/models/train_model
+if __name__ == '__main__':
+    main()
