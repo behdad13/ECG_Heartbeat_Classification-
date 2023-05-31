@@ -3,7 +3,7 @@ Sickkids_Interview
 
 Welcome to the comprehensive A-Z project that uses a Convolutional Neural Network (CNN) model for heartbeat classification.
 
-In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find these notebooks in the Notebooks Directory.
+In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find these notebooks in the **Notebooks** Directory.
 
 Below is an explanation of the Python scripts used in this project:
 
@@ -23,7 +23,9 @@ For testing holdout, run the command in your IDE terminal: ```python src/models/
 Run the command in your IDE terminal ```python src/visualization/visualize.py data/processed/processed_train.csv data/interim/inter_train.csv reports/figures/```.
 
 
-A dedicated folder named deployment is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
+
+
+A dedicated folder named **deployment** is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
 
 ![image](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/8531b35a-8630-46f4-94f1-37903ce26595)
 
