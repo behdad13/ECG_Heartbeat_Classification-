@@ -2,7 +2,7 @@ import click
 from keras.models import load_model
 from sklearn.metrics import classification_report
 import pandas as pd
-#from src.visualization.visualize import plot_confusion_matrix
+from ..visualization.visualize import plot_confusion_matrix
 import tensorflow.keras.utils as utils
 
 
@@ -15,7 +15,7 @@ def prepare_test_data(df_test):
     return X_test, y_test, y_test_one
 
 
-def evaluate_best_model(df_test, best_model_path, figure_name):
+def evaluate_best_model(df_test, best_model_path, figure_name, figure_path):
     X_test, y_test, y_test_one = prepare_test_data(df_test)
     loaded_model = load_model(best_model_path)
     loss, accuracy = loaded_model.evaluate(X_test, y_test_one)
@@ -25,17 +25,19 @@ def evaluate_best_model(df_test, best_model_path, figure_name):
     print("Test Loss:", loss)
     print("Test Accuracy:", accuracy)
     print(classification_report(y_test, y_pred_classes))
-    #plot_confusion_matrix(y_test, y_pred_classes, figure_name=figure_name)
+
+    plot_confusion_matrix(y_test, y_pred_classes, figure_name=figure_name, figures_path=figure_path)
 
 
 @click.command()
 @click.argument('df_test_path', type=click.Path(exists=True))
 @click.argument('best_model_path', type=click.Path(exists=True))
+@click.argument('figure_path', type=click.Path(exists=True))
 @click.argument('figure_name', type=str)
 
-def main(df_test_path, best_model_path, figure_name):
+def main(df_test_path, best_model_path, figure_path, figure_name):
     df_test = pd.read_csv(df_test_path)
-    evaluate_best_model(df_test, best_model_path, figure_name)
+    evaluate_best_model(df_test, best_model_path, figure_name, figure_path)
 
 
 if __name__ == '__main__':
