@@ -12,8 +12,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def upload_file():
     prediction = ''
     if request.method == 'POST':
-        if 'file' not in request.files:
-            return 'No file part'
+        #if 'file' not in request.files:
+        #    return 'No file part'
         file = request.files['file']
         if file.filename == '':
             return 'No selected file'

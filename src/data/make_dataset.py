@@ -19,9 +19,12 @@ def main(input_filepath, output_filepath):
     logger.info('making final data set from raw data')
 
     # Read the input CSV files
+    df_train = pd.read_csv('https://ecg-heartbeat-dataset.s3.amazonaws.com/mitbih_train.csv', header=None)
+    df_test = pd.read_csv('https://ecg-heartbeat-dataset.s3.amazonaws.com/mitbih_test.csv', header=None)
 
-    df_train = pd.read_csv(input_filepath + '/mitbih_train.csv', header=None)
-    df_test = pd.read_csv(input_filepath + '/mitbih_test.csv', header=None)
+
+    df_train.to_csv(input_filepath + '/mitbih_train.csv')
+    df_test.to_csv(input_filepath + '/mitbih_test.csv')
 
     # Perform your desired data processing steps here
     # Step 1: Create Hold-out dataset

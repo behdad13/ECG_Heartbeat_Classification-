@@ -8,7 +8,7 @@ import logging
 @click.argument('output_filepath', type=click.Path())
 def main(input_filepath, output_filepath):
     logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
+    logger.info('making final data set from intermediate data')
 
     # Read the input CSV files
     df_train = pd.read_csv(input_filepath + '/inter_train.csv', header=None)

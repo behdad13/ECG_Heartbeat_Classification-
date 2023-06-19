@@ -45,7 +45,7 @@ class EcgSignalPlotter:
         with plt.style.context("seaborn-white"):
             for i in range(5):
                 ax = self.axs.flat[i]
-                ax.plot(self.samples[i].values[:, :-2].transpose())
+                ax.plot(self.samples[i].values[:, :-1].transpose())
                 ax.set_title(self.titles[i])
             plt.tight_layout()
             plt.suptitle("Signals", fontsize=20, y=1.05, weight="bold")

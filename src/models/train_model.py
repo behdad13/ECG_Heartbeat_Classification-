@@ -28,8 +28,8 @@ def prepare_train_valid_data(df_train):
     return X_train, X_validation, y_train, y_validation
 
 
-def shuffle_data(df):
-    return df.sample(frac=1, random_state=42)
+#def shuffle_data(df):
+#    return df.sample(frac=1, random_state=42)
 
 def create_model(filter_size, kernel_size, pool_size):
     model = Sequential()
