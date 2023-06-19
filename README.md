@@ -3,11 +3,11 @@ Sickkids_Interview
 
 Welcome to the comprehensive A-Z project that uses a Convolutional Neural Network (CNN) model for heartbeat classification.
 
-In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find answers of your questions in the **Notebooks** Directory.
+In this project, I perform Exploratory Data Analysis (EDA), feature engineering, data modelling, model evaluation, and model deployment, each step described in detail with associated code in a Jupyter notebook. You can find answers to your questions in the **Notebooks** Directory.
 
 Below is an explanation of the Python scripts used in this project: Follow the steps to run the projects. 
 
-1. First, install required libraries by runing the command ```pip install -r requirements.txt``` and create directories for **data** and its sub folders (put the raw data ```mitbih_test.csv``` &  ```mitbih_train.csv``` in the **raw** folder). Becease of the large data size I can not upload **data** folder here. (sorry :(( )
+1. First, install the required libraries by running the command ```pip install -r requirements.txt``` and create directories for **data** and its subfolders. Data will be downloaded automatically from the AWS S3 bucket. Because of the large data size, I can not upload **data** folder here. (sorry :(( )
 
 2. ```make_dataset.py```: This script converts raw data into a more manageable format, which is then stored in the interim folder. Run the command in your IDE terminal ```python src/data/make_dataset.py data/raw data/interim```. 
 * It is ```python src/data/make_dataset.py <path to your raw data> <path to your intermediate data>```.
