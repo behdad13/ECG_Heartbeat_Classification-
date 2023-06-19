@@ -1,4 +1,4 @@
-Sickkids_Interview
+ECG classification with CNN (pipeline + model deployment with Flask)
 ==============================
 
 Welcome to the comprehensive A-Z project that uses a Convolutional Neural Network (CNN) model for heartbeat classification.
