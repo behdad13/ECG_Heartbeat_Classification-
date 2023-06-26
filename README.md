@@ -35,14 +35,14 @@ Run the command in your IDE terminal ```python src/visualization/visualize.py da
 
 A dedicated folder named **deployment** is included in this project. It holds the Flask application associated with the project. The application accepts a .csv file containing ECG signal records and returns the corresponding ECG class type. Here is the Flask app for my project:
 
-![image](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/8531b35a-8630-46f4-94f1-37903ce26595)
+![image](https://github.com/behdad13/ECG_Heartbeat_Classification-/assets/58978680/2d30ddda-3e18-497d-be01-536be04d0728)
 
 To deploy the model, run the command in your IDE terminal ```python deployment/app.py```. You can test the model with ```output.csv```, located in ```deployment->update``` directory.
 
 
 To perform MLFlow analysis, you can run the following command in your IDE terminal: mlflow ui. This command will launch the MLFlow user interface, allowing you to access graphical analysis tools.
 
-![Screenshot 2023-05-30 at 6 54 10 PM](https://github.com/behdad13/Interview_Sick_kids/assets/58978680/52537d3c-82b1-4c0c-8594-ebe236f51d13)
+![image](https://github.com/behdad13/ECG_Heartbeat_Classification-/assets/58978680/d198d8f7-e72c-4a62-8e84-3c98460497c0)
 
 
 Project Organization
